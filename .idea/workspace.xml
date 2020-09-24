@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ed059d1-fb25-4ef5-85d3-0ac9a0625b41" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/marathonJS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600753659279</updated>
-      <workItem from="1600753661585" duration="5925000" />
+      <workItem from="1600753661585" duration="6833000" />
+      <workItem from="1600928185645" duration="11331000" />
     </task>
     <servers />
   </component>
@@ -73,10 +72,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1600759842173">
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1600760518180">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1600759842173" />
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1600760518180" />
     <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1600754465024">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -93,10 +92,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600754465024" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1600759846904">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1600760519404">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1600759846904" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1600760519404" />
+    <state x="0" y="0" width="587" height="680" key="find.popup" timestamp="1600929881050">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1600929881050" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1600753868411">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
