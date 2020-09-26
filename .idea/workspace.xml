@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ed059d1-fb25-4ef5-85d3-0ac9a0625b41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/Parkscene_Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Pokemon_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/SkyDay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/card.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/pockeball.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +52,11 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Grisha\WebstormProjects\marathonJS\assets" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/main.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
@@ -64,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600753659279</updated>
       <workItem from="1600753661585" duration="6833000" />
-      <workItem from="1600928185645" duration="11331000" />
+      <workItem from="1600928185645" duration="12078000" />
+      <workItem from="1601060405644" duration="5669000" />
     </task>
     <servers />
   </component>
