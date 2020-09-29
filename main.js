@@ -1,121 +1,79 @@
-//#1
-console.log("%cЗадание 1", "color: #FFFF00; background-color: #5394EC; padding: 4px; font-size: 16px;");
-const firstRow = 'мама мыла раму';
-const secondRow = 'собака друг человека';
+const $btn = document.getElementById('btn-kick');
+const $btnUlt = document.getElementById('btn-ultimate');
+const character = {
+    name: 'Pikachu',
+    defaultHP: 100,
+    damageHP: 100,
+    elHP: document.getElementById('health-character'),
+    elProgressbar: document.getElementById('progressbar-character'),
+};
 
-function getRow (firstRow, secondRow) {
-    let counterFirstRow = 0;
-    let counterSecondRow = 0;
-    let maxRowLength;
+const enemy = {
+    name: 'Charmander',
+    defaultHP: 100,
+    damageHP: 100,
+    elHP: document.getElementById('health-enemy'),
+    elProgressbar: document.getElementById('progressbar-enemy'),
+};
 
-    maxRowLength = (firstRow.length > secondRow.length) ? firstRow.length : secondRow.length;
-    console.log('maxRowLength = ', maxRowLength);
+$btn.addEventListener('click', function () {
+    console.log('kick D:');
+    random();
+    changeHP(random(20), character);
+    changeHP(random(20), enemy);
+});
 
-    for (let i = 0; i < maxRowLength; i++) {
-        if (firstRow.charAt(i) === 'а' || firstRow.charAt(i) === 'a') {
-            counterFirstRow++;
-        }
-        if (secondRow.charAt(i) === 'а' || secondRow.charAt(i) === 'а') {
-            counterSecondRow++;
-        }
+$btnUlt.addEventListener('click', function () {
+   ultimate(character);
+   ultimate(enemy);
+});
+
+function init() {
+    console.log('Start game');
+    $btnUlt.disabled = true;
+    renderHP(character);
+    renderHP(enemy);
+};
+
+function renderHP(person) {
+    renderHPLife(person);
+    renderProgressbarHP(person);
+    if (person.damageHP < 50 && person.damageHP > 2) $btnUlt.disabled = false;
+    if (person.damageHP === 1) {$btnUlt.disabled = true;}
+};
+
+function renderHPLife (person) {
+    person.elHP.innerText = person.damageHP + ' / ' + person.defaultHP;
+};
+
+function renderProgressbarHP (person) {
+    person.elProgressbar.style.width = person.damageHP + '%';
+};
+
+function changeHP (count, person) {
+    if (person.damageHP < count) {
+        person.damageHP = 0;
+        alert('Бедный ' + person.name + 'проиграл D:');
+        $btn.disabled = true;
+        $btnUlt.disabled = true;
+    } else {
+        person.damageHP -= count;
     }
-    console.log('lengthFirstRow = ' + counterFirstRow + ' ' + 'lengthSecondRow = ' +  counterSecondRow);
-    return (counterFirstRow > counterSecondRow) ? firstRow : secondRow;
-}
+    renderHP(person);
+};
 
-console.log(getRow(firstRow, secondRow));
+function random(num) {
+    return Math.ceil(Math.random() * num);
+};
 
-//#1*
-console.log("%cЗадание 1*", "color: #FFFF00; background-color: #5394EC; padding: 4px; font-size: 16px;");
-function getRowWithAnyLetter (firstRow, secondRow, letter) {
-    let counterFirstRow = 0;
-    let counterSecondRow = 0;
-    let maxRowLength;
-
-    maxRowLength = (firstRow.length > secondRow.length) ? firstRow.length : secondRow.length;
-    console.log('maxRowLength = ', maxRowLength);
-
-    for (let i = 0; i < maxRowLength; i++) {
-        if (firstRow.charAt(i) === letter) {
-            counterFirstRow++;
-        }
-        if (secondRow.charAt(i) === letter) {
-            counterSecondRow++;
-        }
+function ultimate(person) {
+    if (person.damageHP < 50) {
+        $btnUlt.disabled = false;
+        person.damageHP -= (person.damageHP - 1);
+    } else {
+        $btnUlt.disabled = true;
     }
-    console.log('lengthFirstRow = ' + counterFirstRow + ' ' + 'lengthSecondRow = ' +  counterSecondRow);
-    return (counterFirstRow > counterSecondRow) ? firstRow : secondRow;
-}
-let userInput = prompt('Enter a letter:');
-console.log(getRowWithAnyLetter(firstRow, secondRow, userInput));
+    renderHP(person);
+};
 
-// #2
-console.log("%cЗадание 2", "color: #FFFF00; background-color: #5394EC; padding: 4px; font-size: 16px;");
-const phoneNumber = '+71234567890';
-
-function formattedPhone (phone) {
-    let result = '';
-    for (let i = 0; i < phone.length; i++) {
-        result += phone.charAt(i);
-        if (phone.charAt(i) === '7' && i === 1) result += ' (';
-        if (i === 4) result += ') ';
-        if (i === 7 || i === 9) result += '-';
-    }
-    return result;
-}
-
-console.log(formattedPhone(phoneNumber));
-
-// #2*
-console.log("%cЗадание 2*", "color: #FFFF00; background-color: #5394EC; padding: 4px; font-size: 16px;");
-let userPhone = prompt('Input your phone number');
-
-function formattedPhoneUser (phone) {
-    let result = '';
-    if ((phone != '+79211234567') && (phone != '79211234567')
-        && (phone != '89211234567') && (phone != '9211234567')) {
-        alert('Bad format');
-        return 'Bad format';
-    }
-    switch (phone.charAt(0)) {
-        case '+':
-            for (let i = 0; i < phone.length; i++) {
-                result += phone.charAt(i);
-                if (phone.charAt(i) === '7' && i === 1) result += ' (';
-                if (i === 4) result += ') ';
-                if (i === 7 || i === 9) result += '-';
-            }
-            break;
-        case '7':
-            for (let i = 0; i < phone.length; i++) {
-                if (phone.charAt(i) === '7' && i === 0) result += '+';
-                result += phone.charAt(i);
-                if (phone.charAt(i) === '7' && i === 0) result += ' (';
-                if (i === 3) result += ') ';
-                if (i === 6 || i === 8) result += '-';
-            }
-            break;
-        case '8':
-            for (let i = 0; i < phone.length; i++) {
-                result += phone.charAt(i);
-                if (phone.charAt(i) === '8' && i === 0) result = '+7 (';
-                if (i === 3) result += ') ';
-                if (i === 6 || i === 8) result += '-';
-            }
-            break;
-        case '9':
-            for (let i = 0; i < phone.length; i++) {
-                if (phone.charAt(i) === '9' && i === 0) result += '+7 (';
-                result += phone.charAt(i);
-                if (i === 2) result += ') ';
-                if (i === 5 || i === 7) result += '-';
-            }
-            break;
-        default:
-            break;
-    }
-
-    return result;
-}
-
-console.log(formattedPhoneUser(userPhone));
+init();
