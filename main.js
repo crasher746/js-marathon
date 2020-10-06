@@ -33,16 +33,35 @@ const enemy = {
 
 const $logs = document.querySelector('#logs');
 
+function countClick() {
+    let counter = 0;
+    return [
+        function (number, typeOfHit) {
+            counter += number
+            console.log(`${typeOfHit}` + '[' + counter + ']');
+            return counter;
+        },
+        function (id, limit, button) {
+            if (counter === limit) {button.disabled = true;}
+            return document.getElementById(`${id}`).innerText = '(' + counter + '/' + limit + ' )';
+        }
+    ]
+};
+const [clickOnKick, textOnButtonKick] = countClick();
+const [clickOnUltimate, textOnButtonUltimate] = countClick();
 $btn.addEventListener('click', function () {
-    console.log('kick D:');
+    clickOnKick(1, 'Kick');
+    textOnButtonKick('clickOnKick', 6, $btn);
     random();
     character.changeHP(random(20));
     enemy.changeHP(random(20));
 });
 
 $btnUlt.addEventListener('click', function () {
-   character.ultimate();
-   enemy.ultimate()
+    clickOnUltimate(1, 'Ultimate');
+    textOnButtonUltimate('clickOnUltimate', 1, $btnUlt);
+    character.ultimate();
+    enemy.ultimate()
 });
 
 function init() {
