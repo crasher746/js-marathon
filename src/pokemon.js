@@ -6,26 +6,30 @@ class Selectors {
 }
 
 class Pokemon extends Selectors{
-    constructor({name, defaultHP, damageHP, selectors}) {
+    constructor({name, hp, type, selectors, attacks = []}) {
         super(selectors);
 
         this.name = name;
-        this.defaultHP = defaultHP;
-        this.damageHP = damageHP;
+        this.hp = {
+            current: hp,
+            total: hp,
+        };
+        this.type = type;
+        this.attacks = attacks;
 
         this.renderHP();
     };
 
     changeHP = (count, cb) => {
-        this.damageHP -= count;
+        this.hp.current -= count;
 
-        if (this.damageHP <= 0) {
-            this.damageHP = 0;
+        if (this.hp.current <= 0) {
+            this.hp.current = 0;
         }
 
         this.renderHP();
 
-        cb && cb(count, this.damageHP, this.defaultHP);
+        cb && cb(count, this.hp.current, this.hp.total);
     };
 
     renderHP = () => {
@@ -34,13 +38,13 @@ class Pokemon extends Selectors{
     };
 
     renderHPLife = () => {
-        let { elHP, defaultHP, damageHP } = this;
-        elHP.innerText = damageHP + ' / ' + defaultHP;
+        let { elHP, hp: {current, total} } = this;
+        elHP.innerText = current + ' / ' + total;
     };
 
     renderProgressbarHP = () => {
-        let { elProgressbar, defaultHP, damageHP } = this;
-        const percent = damageHP / defaultHP * 100;
+        let { elProgressbar, hp: {current, total}} = this;
+        const percent = current / total * 100;
         elProgressbar.style.width = percent + '%';
     };
 }

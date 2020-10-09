@@ -40,8 +40,9 @@ body {
     position: relative;
     margin: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .playground {
@@ -471,4 +472,36 @@ h1 {
 
 .action label {
     padding: 6px 0;
+}
+
+.text-red {
+    color: red;
+}
+.text-green {
+    color: green;
+}
+
+.log {
+    text-align: left;
+    position: relative;
+    width: 50%;
+    height: 300px;
+    overflow-y: scroll;
+    background-color: #ffffff78;
+    float: left;
+    border-radius: 10px;
+    margin: 10px;
+}
+.log p {
+    border: 3px solid #fff;
+    background-color: #8aec8c;
+    color: #15171b;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
