@@ -8,9 +8,10 @@ class Selectors {
 }
 
 class Pokemon extends Selectors{
-    constructor({name, img, hp, type, selectors, attacks = []}) {
+    constructor({id, name, img, hp, type, selectors, attacks = []}) {
         super(selectors);
 
+        this.id = id;
         this.name = name;
         this.hp = {
             current: hp,
@@ -70,6 +71,8 @@ class Pokemon extends Selectors{
         const percent = current / total * 100;
         elProgressbar.style.width = percent + '%';
     };
+
+    getId = () => {return this.id};
 }
 
 export default Pokemon;
