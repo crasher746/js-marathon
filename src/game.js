@@ -44,7 +44,7 @@ class Game extends Elements{
             console.log('Click button:', $btnStart.innerText);
             allButtons = document.querySelectorAll('.control .button');
             allButtons.forEach($item => $item.remove());
-            if (logic === 1) {
+            if (logic === 1 || mode === 'Restart') {
                 let oldLog = document.querySelectorAll('.gameLog');
                 oldLog.forEach($item => $item.remove());
             }
